@@ -1,5 +1,6 @@
 @extends('layouts.app')
-@section('title', $viewData["title"])@section('subtitle', $viewData["subtitle"])
+@section('title', $viewData["title"])
+@section('subtitle', $viewData["subtitle"])
 @section('content')
 <div class="card mb-3">
     <div class="row g-0">
@@ -12,6 +13,11 @@
                     {{ $viewData["product"]["name"] }}
                 </h5>
                 <p class="card-text">{{ $viewData["product"]["description"] }}</p>
+                @if ($viewData["product"]["price"] > 100)
+                    <p class="card-text text-danger">$ {{ $viewData["product"]["price"] }}</p>
+                @else
+                    <p class="card-text">$ {{ $viewData["product"]["price"] }}</p>
+                @endif
             </div>
         </div>
     </div>

@@ -22,6 +22,16 @@
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link active" href="{{ route('home.index') }}">Home</a>
                     <a class="nav-link active" href="{{ route('home.about') }}">About</a>
+                    <a class="nav-link active" href="{{ route('home.contact') }}">Contact</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Prodcuts
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{ route('product.index') }}">Show Products</a></li>
+                            <li><a class="dropdown-item" href="{{ route('product.create') }}">Create Product</a></li>
+                        </ul>
+                    </li>
                 </div>
             </div>
         </div>

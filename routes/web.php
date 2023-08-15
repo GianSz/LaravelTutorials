@@ -21,11 +21,13 @@ Route::get('/about', function () {
     $description = "This is an about page ...";
     $author = "Developed by: Gian Paul Sánchez Aristizábal";
     return view('home.about')
-                ->with("title", $data1)
-                ->with("subtitle", $data2)
-                ->with("description", $description)
-                ->with("author", $author);
+        ->with("title", $data1)
+        ->with("subtitle", $data2)
+        ->with("description", $description)
+        ->with("author", $author);
 })->name("home.about");
+
+Route::get('/contact', 'App\Http\Controllers\HomeController@contact')->name("home.contact");
 
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name("product.index");
 Route::get('/products/create', 'App\Http\Controllers\ProductController@create')->name("product.create");
