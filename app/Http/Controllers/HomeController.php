@@ -20,10 +20,10 @@ class HomeController extends Controller
         $phone_number = '3010623428';
 
         return view('home.contact')
-            ->with("title", $title)
-            ->with("subtitle", $subtitle)
-            ->with("email", $email)
-            ->with("address", $address)
-            ->with("phone_number", $phone_number);
+            ->with('title', $title)
+            ->with('subtitle', $subtitle)
+            ->with('email', $email)
+            ->with('address', $address)
+            ->with('phone_number', $phone_number);
     }
 }
