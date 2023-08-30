@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,6 +8,7 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
     <title>@yield('title', 'Online Store')</title>
 </head>
+
 <body>
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
@@ -32,6 +34,16 @@
                             <li><a class="dropdown-item" href="{{ route('product.create') }}">Create Product</a></li>
                         </ul>
                     </li>
+                    <div class="vr bg-white mx-2 d-none d-lg-block"></div>
+                    @guest
+                    <a class="nav-link active" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link active" href="{{ route('register') }}">Register</a>
+                    @else
+                    <form id="logout" action="{{ route('logout') }}" method="POST">
+                        <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">Logout</a>
+                        @csrf
+                    </form>
+                    @endguest
                 </div>
             </div>
         </div>
@@ -63,4 +75,5 @@
     <!-- footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
